@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.aadidev.foodexpirytracker.controller.ViewItemsController"
+            prefWidth="800" prefHeight="600">
+
+    <VBox spacing="10" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+        <!-- Top bar with logout and filter -->
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <TextField fx:id="filterDaysInput" promptText="Days to expire"/>
+            <Button text="Filter" onAction="#onFilter"/>
+            <Button text="Logout" onAction="#onLogout"/>
+        </HBox>
+
+        <!-- TableView -->
+        <TableView fx:id="tableView">
+            <columns>
+                <TableColumn fx:id="nameColumn" text="Name" prefWidth="200"/>
+                <TableColumn fx:id="expiryColumn" text="Expiry Date" prefWidth="200"/>
+                <TableColumn fx:id="actionColumn" text="Action" prefWidth="100"/>
+            </columns>
+        </TableView>
+
+        <!-- Add item row -->
+        <HBox spacing="10">
+            <TextField fx:id="nameInput" promptText="Food name"/>
+            <DatePicker fx:id="expiryInput"/>
+            <Button text="Add" onAction="#onAdd"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

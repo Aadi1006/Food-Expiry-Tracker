@@ -69,6 +69,10 @@ public class ViewItemsController {
 
     @FXML
     public void onAdd() {
+        if (userId == 0) {
+            new Alert(Alert.AlertType.ERROR, "User not set. Please log in again.").show();
+            return;
+        }
         String name = nameInput.getText();
         LocalDate date = expiryInput.getValue();
         if (name.isBlank() || date == null) return;

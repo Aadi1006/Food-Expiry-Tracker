@@ -37,6 +37,7 @@ public class ViewItemsController {
     }
 
     public void initialize() {
+        tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         nameColumn.setCellValueFactory(data -> new javafx.beans.property.SimpleStringProperty(data.getValue().getName()));
         expiryColumn.setCellValueFactory(data -> new javafx.beans.property.SimpleObjectProperty<>(data.getValue().getExpiryDate()));
         foodItems = FXCollections.observableArrayList();
